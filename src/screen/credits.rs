@@ -27,8 +27,9 @@ fn enter_credits(mut commands: Commands) {
         .ui_root()
         .insert(StateScoped(Screen::Credits))
         .with_children(|children| {
-            children.label("Alice - Foo");
-            children.label("Bob - Bar");
+            children.label("Mnr Julian");
+            children.label("Justin");
+            children.label("Isard");
 
             children.button("Back").insert(CreditsAction::Back);
         });
