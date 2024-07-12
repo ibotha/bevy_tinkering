@@ -2,7 +2,7 @@
 #![cfg_attr(not(feature = "dev"), windows_subsystem = "windows")]
 
 use bevy::prelude::*;
-use bevy_tinkering::AppPlugin;
+use map_maker::AppPlugin;
 
 fn main() {
     App::new().add_plugins(AppPlugin).run();

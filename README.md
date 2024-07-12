@@ -1,11 +1,11 @@
-# Bevy GitHub CI Template
+# The Lost Map Maker
 
-This repo shows how to set up CI on a GitHub project for Bevy.
+A game about being a lost map maker.
 
-It creates two workflows:
+## Workflows
 
-* [CI](#ci)
-* [Release](#release)
+-   [CI](#ci)
+-   [Release](#release)
 
 ## Running the project
 
@@ -29,9 +29,9 @@ This workflow runs on every commit to `main` branch, and on every PR targeting t
 
 It will use rust stable on linux, with cache between different executions, those commands:
 
-* `cargo test`
-* `cargo clippy -- -D warnings`
-* `cargo fmt --all -- --check`
+-   `cargo test`
+-   `cargo clippy -- -D warnings`
+-   `cargo fmt --all -- --check`
 
 If you are using anything OS specific or rust nightly, you should update the file [ci.yaml](./.github/workflows/ci.yaml) to use those.
 
@@ -43,9 +43,9 @@ This workflow runs on every tag.
 
 It will build:
 
-* For Linux and Windows, a .zip archive containing the executable and the `assets`.
-* For macOS, a dmg image with a .app containing the `assets`.
-* For wasm, a .zip archive with the wasm binary, the js bindings, an html file loading it, and the `assets`.
+-   For Linux and Windows, a .zip archive containing the executable and the `assets`.
+-   For macOS, a dmg image with a .app containing the `assets`.
+-   For wasm, a .zip archive with the wasm binary, the js bindings, an html file loading it, and the `assets`.
 
 If you don't want to target some of those platforms, you can remove the corresponding job from the file [release.yaml](./.github/workflows/release.yaml).
 
@@ -73,8 +73,7 @@ git push --tags
 
 A new release will be available in GitHub, with the archives per platform available as downloadable assets.
 
-The `git` commands above produced this release: [my-game-1.0](
-https://github.com/bevyengine/bevy_github_ci_template/releases/tag/my-game-1.0).
+The `git` commands above produced this release: [my-game-1.0](https://github.com/bevyengine/bevy_github_ci_template/releases/tag/my-game-1.0).
 
 ## Using the workflows in your own project
 
@@ -99,12 +98,12 @@ Once that is done, any tag pushed to GitHub will trigger an itch.io release and 
 
 Licensed under either of
 
-* Apache License, Version 2.0
-   ([LICENSE-APACHE-2.0](LICENSE-Apache-2.0) or <http://www.apache.org/licenses/LICENSE-2.0>)
-* MIT License
-   ([LICENSE-MIT](LICENSE-MIT) or <http://opensource.org/licenses/MIT>)
-* CC0-1.0 License
-   ([LICENSE-CC0-1.0](LICENSE-CC0-1.0) or <https://creativecommons.org/publicdomain/zero/1.0/legalcode>)
+-   Apache License, Version 2.0
+    ([LICENSE-APACHE-2.0](LICENSE-Apache-2.0) or <http://www.apache.org/licenses/LICENSE-2.0>)
+-   MIT License
+    ([LICENSE-MIT](LICENSE-MIT) or <http://opensource.org/licenses/MIT>)
+-   CC0-1.0 License
+    ([LICENSE-CC0-1.0](LICENSE-CC0-1.0) or <https://creativecommons.org/publicdomain/zero/1.0/legalcode>)
 
 at your option.
 
