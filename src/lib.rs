@@ -1,3 +1,4 @@
+mod assets;
 mod camera;
 mod camera_movement;
 #[cfg(feature = "dev")]
@@ -53,6 +54,7 @@ impl Plugin for AppPlugin {
 
         // Add other plugins.
         app.add_plugins((
+            assets::plugin,
             game::plugin,
             screen::plugin,
             ui_tools::plugin,

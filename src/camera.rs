@@ -20,22 +20,23 @@ pub enum CameraTypes {
 struct CameraType(CameraTypes);
 
 fn spawn_cameras(mut commands: Commands) {
+    let mut camera_bundle = Camera2dBundle::default();
+    camera_bundle.projection.near = -1000.0;
+    camera_bundle.projection.far = 1000.0;
+    camera_bundle.camera.clear_color = ClearColorConfig::Custom(Color::hsva(0.0, 0.0, 1.0, 1.0));
+
     commands.spawn((
         Name::new("Camera"),
-        Camera2dBundle { ..default() },
+        camera_bundle.clone(),
         IsDefaultUiCamera,
         CameraType(CameraTypes::Menu),
     ));
 
+    camera_bundle.camera.is_active = false;
+
     commands.spawn((
         Name::new("Camera"),
-        Camera2dBundle {
-            camera: Camera {
-                is_active: false,
-                ..default()
-            },
-            ..default()
-        },
+        camera_bundle,
         Movement { speed: 420f32 },
         MovementController::default(),
         CameraType(CameraTypes::Game),
