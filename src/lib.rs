@@ -5,6 +5,9 @@ mod game;
 mod screen;
 mod ui_tools;
 
+//Extension addons (camera)
+mod extensions;
+
 use bevy::{
     asset::AssetMetaCheck,
     audio::{AudioPlugin, Volume},
