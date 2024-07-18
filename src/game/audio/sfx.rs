@@ -1,7 +1,7 @@
 use bevy::{audio::PlaybackMode, prelude::*};
 use rand::prelude::SliceRandom;
 
-pub(super) fn play_sfx(
+pub(crate) fn play_sfx(
     trigger: Trigger<Sfx>,
     mut commands: Commands,
     asset_server: Res<AssetServer>,

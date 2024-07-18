@@ -25,6 +25,7 @@ dev = [
 ]
 dev_native = [
     "dev",
+    "bevy/dynamic_linking",
     # Enable asset hot reloading for native dev builds.
     "bevy/file_watcher",
     # Enable embedded asset hot reloading for native dev builds.
