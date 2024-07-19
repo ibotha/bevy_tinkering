@@ -1,6 +1,6 @@
 //! Camera setup.
 
-use bevy::{ecs::reflect::ReflectCommandExt, prelude::*};
+use bevy::prelude::*;
 
 use crate::camera_movement::{self, Movement, MovementController};
 

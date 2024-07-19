@@ -1,5 +1,5 @@
 use bevy::{
-    asset::{io::Reader, AssetLoader, AssetPath, AsyncReadExt, LoadContext},
+    asset::{io::Reader, AssetLoader, AsyncReadExt, LoadContext},
     prelude::*,
 };
 
@@ -28,10 +28,7 @@ impl AssetLoader for TextureAtlasLayoutLoader {
 
         let lines: Vec<&str> = string.lines().collect();
         let image_name = lines[0];
-        let base_path = load_context
-            .asset_path()
-            .parent()
-            .unwrap_or(AssetPath::default());
+        let base_path = load_context.asset_path().parent().unwrap_or_default();
         let image_asset = load_context
             .loader()
             .direct()

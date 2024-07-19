@@ -1,6 +1,6 @@
 //! The screen state for the main game loop.
 
-use bevy::{ecs::query, input::common_conditions::input_just_pressed, prelude::*};
+use bevy::{input::common_conditions::input_just_pressed, prelude::*};
 
 use super::Screen;
 use crate::{

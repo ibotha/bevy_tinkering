@@ -1,5 +1,4 @@
 use bevy::{audio::PlaybackMode, prelude::*};
-use rand::prelude::SliceRandom;
 
 pub(crate) fn play_sfx(
     trigger: Trigger<Sfx>,
@@ -10,7 +9,6 @@ pub(crate) fn play_sfx(
     let path = match event {
         Sfx::ButtonHover => "audio/sfx/button_hover.ogg",
         Sfx::ButtonPress => "audio/sfx/button_press.ogg",
-        Sfx::Step => random_step(),
     };
     let source = asset_server.load::<AudioSource>(path);
     let settings = PlaybackSettings {
@@ -25,16 +23,4 @@ pub(crate) fn play_sfx(
 pub enum Sfx {
     ButtonHover,
     ButtonPress,
-    Step,
-}
-
-fn random_step() -> &'static str {
-    [
-        "audio/sfx/step1.ogg",
-        "audio/sfx/step2.ogg",
-        "audio/sfx/step3.ogg",
-        "audio/sfx/step4.ogg",
-    ]
-    .choose(&mut rand::thread_rng())
-    .unwrap()
 }

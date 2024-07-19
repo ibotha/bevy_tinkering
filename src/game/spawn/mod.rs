@@ -10,6 +10,7 @@ pub mod level;
 // This enum is a single place for us to store all the standard z-depths
 // for our game, lower down on the list is closer to the camera.
 #[repr(i32)]
+#[allow(dead_code)]
 enum Depths {
     Base = 0,
     Background,
