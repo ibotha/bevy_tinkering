@@ -18,7 +18,7 @@ enum TitleAction {
     Play,
     Credits,
     /// Exit doesn't work well with embedded applications.
-    #[cfg(not(target_arch = "wasm64"))]
+    #[cfg(not(target_arch = "wasm32"))]
     Exit,
 }
 
