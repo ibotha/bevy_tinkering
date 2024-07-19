@@ -30,7 +30,7 @@ fn enter_title(mut commands: Commands) {
             children.button("Play").insert(TitleAction::Play);
             children.button("Credits").insert(TitleAction::Credits);
 
-            #[cfg(not(target_arch = "wasm64"))]
+            #[cfg(not(target_arch = "wasm32"))]
             children.button("Exit").insert(TitleAction::Exit);
         });
 }
@@ -46,7 +46,7 @@ fn handle_title_action(
                 TitleAction::Play => next_screen.set(Screen::Playing),
                 TitleAction::Credits => next_screen.set(Screen::Credits),
 
-                #[cfg(not(target_arch = "wasm64"))]
+                #[cfg(not(target_arch = "wasm32"))]
                 TitleAction::Exit => {
                     app_exit.send(AppExit::Success);
                 }
